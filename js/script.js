@@ -153,8 +153,7 @@ class Me {
     if (sender.Name == this.ele_footer.Name) return;
 
 
-    this.#log(sender.Name);
-
+    
     if (sender.Name == this.ele_asking_name.Name) {
       this.ele_nav_bar.Hide();
       this.ele_footer.Hide();
