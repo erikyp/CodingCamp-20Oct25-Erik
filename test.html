@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bulma Navbar with Arrow Toggle</title>
+
+  <!-- Bulma-prefixed CSS -->
+  <link rel="stylesheet" href="css/bulma-prefixed.min.css">
+
+  <style>
+    .arrow-button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    /* ✅ position arrow like a burger */
+    .bulma-navbar-brand {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="bulma-navbar bulma-is-primary" role="navigation" aria-label="main navigation">
+    <div class="bulma-navbar-brand">
+      <a class="bulma-navbar-item" href="#"><strong>MySite</strong></a>
+
+      <!-- ✅ arrow aligned to right -->
+      <button class="arrow-button" id="arrowBtn" aria-label="Toggle menu">▼</button>
+    </div>
+
+    <div id="mainNavbar" class="bulma-navbar-menu">
+      <div class="bulma-navbar-start">
+        <a class="bulma-navbar-item" href="#">Home</a>
+        <a class="bulma-navbar-item" href="#">About</a>
+        <a class="bulma-navbar-item" href="#">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const arrowBtn = document.getElementById('arrowBtn');
+      const menu = document.getElementById('mainNavbar');
+
+      arrowBtn.addEventListener('click', () => {
+        menu.classList.toggle('bulma-is-active');
+        arrowBtn.textContent = (arrowBtn.textContent === '▼') ? '▲' : '▼';
+      });
+    });
+  </script>
+</body>
+</html>

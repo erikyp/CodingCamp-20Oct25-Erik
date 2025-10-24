@@ -8,6 +8,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="css/bulma-prefixed.min.css">
+    <link rel="stylesheet" href="css/bulma-override.css">
 
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
@@ -15,45 +16,72 @@
 
 <body class="font-sans text-gray-800">
 
-    <header>
+    <header class="bulma-has-background-primary bulma-p-0">
+        <div id="NavBar" class="bulma-is-hidden">
+            <nav class="bulma-navbar bulma-is-primary" role="navigation" aria-label="main navigation">
+                <div class="bulma-navbar-brand">
+                    <a class="bulma-navbar-item" href="#">
+                        <img src="images/logo.png" alt="MySite Logo" style="max-height: 2.25rem;">
+                    </a>
 
+                    <!-- 3-strip burger -->
+                    <a role="button" class="bulma-navbar-burger" aria-label="menu" aria-expanded="false" data-target="mainNavbar" title="Click to show Menu">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+
+                <!-- Collapsible menu -->
+                <div id="mainNavbar" class="bulma-navbar-menu">
+                    <div class="bulma-navbar-start bulma-has-text-weight-semibold bulma-is-size-6">
+                        <a class="bulma-navbar-item" href="#" onclick="me.home()">Home</a>
+                        <a class="bulma-navbar-item" href="#">Our Profile</a>
+                        <a class="bulma-navbar-item" href="#">Portfolio</a>
+                        <a class="bulma-navbar-item" href="#">Message Us</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
     </header>
 
 
-    <main>
+    <main class="bulma-container bulma-mt-4 bulma-mbulma-0">
         <div id="AskingName" class="bulma-is-hidden">
             a
         </div>
 
 
-        <div id="Home">
+        <div id="Home" class="bulma-is-hidden">
             b
         </div>
 
 
-        <div id="OurProfile">
+        <div id="OurProfile" class="bulma-is-hidden">
             c
         </div>
 
 
-        <div id="Portfolio">
+        <div id="Portfolio" class="bulma-is-hidden">
             d
         </div>
 
 
-        <div id="MessageUs">
+        <div id="MessageUs" class="bulma-is-hidden">
             e
         </div>
     </main>
 
 
-    <footer>
-
+    <footer class="bulma-has-background-light bulma-p-0">
+        <div class="bulma-container bulma-has-text-right bulma-is-size-7">
+            Crafted by <span class="bulma-has-text-weight-bold">Mr. E</span> © 2025
+        </div>
     </footer>
 
 
     <script type="text/javascript">
-        me.initilize();
+        me.begin();
     </script>
 </body>
 
