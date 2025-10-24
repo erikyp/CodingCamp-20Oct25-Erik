@@ -7,8 +7,7 @@
     <title>My Website</title>
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="css/bulma-prefixed.min.css">
-    <link rel="stylesheet" href="css/bulma-override.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2025.css">
 
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
@@ -16,54 +15,54 @@
 
 <body class="font-sans text-gray-800 flex flex-col min-h-screen">
 
-    <header class="bulma-has-background-primary bulma-m-0 bulma-p-0">
+    <header>
         <div id="NavBar">
-            <nav class="bulma-navbar bulma-is-primary" role="navigation" aria-label="main navigation">
-                <div class="bulma-navbar-brand">
-                    <a class="bulma-navbar-item" href="#">
-                        <img src="images/logo.png" alt="MySite Logo" style="max-height: 2.25rem;">
-                    </a>
+            <nav class="bg-amber-500 text-white-100">
+                <div class="mx-0 px-4">
+                    <div class="flex justify-between items-center h-16">
+                        <!-- Logo -->
+                        <img src="images/logo.png" alt="MySite Logo" style="max-height: 2.5rem;">
 
-                    <!-- 3-strip burger -->
-                    <a role="button" class="bulma-navbar-burger" aria-label="menu" aria-expanded="false"
-                        data-target="mainNavbar" title="Click to show Menu">
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                    </a>
+                        <!-- Burger Button -->
+                        <button id="burger" class="md:hidden focus:outline-none">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+
+                        <!-- Desktop Menu -->
+                        <div id="menu" class="hidden md:flex space-x-6">
+                            <a href="#" class="hover:text-white" onclick="me.home()">Home</a>
+                            <a href=" #" class="hover:text-white" onclick="me.our_profile()">My Profile</a>
+                            <a href="#" class="hover:text-white" onclick="me.portfolio()">Portfolio</a>
+                            <a href="#" class="hover:text-white" onclick="me.message_us()">Message Us</a>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Collapsible menu -->
-                <div id="mainNavbar" class="bulma-navbar-menu">
-                    <div class="bulma-navbar-start bulma-has-text-weight-semibold bulma-is-size-6">
-                        <a class="bulma-navbar-item" href="#" onclick="me.home()">Home</a>
-                        <a class="bulma-navbar-item" href="#">Our Profile</a>
-                        <a class="bulma-navbar-item" href="#">Portfolio</a>
-                        <a class="bulma-navbar-item" href="#">Message Us</a>
-                    </div>
+                <!-- Mobile Menu -->
+                <div id="mobileMenu" class="hidden md:hidden flex-col space-y-2 px-4 pb-4 bg-amber-500">
+                    <a href="#" class="block hover:text-white" onclick="me.home()">Home</a>
+                    <a href=" #" class="block hover:text-white" onclick="me.our_profile()">My Profile</a>
+                    <a href="#" class="block hover:text-white" onclick="me.portfolio()">Portfolio</a>
+                    <a href="#" class="block hover:text-white" onclick="me.message_us()">Message Us</a>
                 </div>
             </nav>
         </div>
     </header>
 
 
-    <main class="bulma-has-background-primary bulma-m-0 bulma-p-0">
+    <main class="flex-grow">
         <div id="AskingName">
-            <section class="section" style="height: 100vh;">
-                <div class="container has-text-centered"
-                    style="display: flex; align-items: center; justify-content: center; height: 100%;">
-                    <div>
-                        <div class="field">
-                            <div class="control">
-                                <input class="input is-medium" type="text" placeholder="Enter your name">
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <div class="control">
-                                <button class="button is-primary is-medium">Submit</button>
-                            </div>
-                        </div>
+            <section class="flex items-center justify-center h-screen bg-gray-50">
+                <div class="text-center space-y-6">
+                    <p class="text-lg text-gray-700">Hi there! Please enter your name.</p>
+                    <div class="flex items-center justify-center gap-3">
+                        <input id="txtName" type="text" placeholder="Enter your name" autofocus
+                            class="w-64 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500" />
+                        <button onclick="me.submit_name(document.getElementById('txtName').value)"
+                            class="px-5 py-2 bg-amber-500 text-white font-medium rounded-lg hover:bg-amber-600 transition">Submit</button>
                     </div>
                 </div>
             </section>
@@ -71,29 +70,283 @@
 
 
         <div id="Home">
-            home
-        </div>
+            <section class="min-h-screen flex flex-col justify-center items-center bg-gray-50 px-6 py-20">
+                <div class="max-w-4xl text-center mb-16">
+                    <h1 class="text-5xl font-extrabold text-gray-800 mb-6">Hi, I’m Mr. E 👋</h1>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                        Nice to meet you! I’m a developer who’s passionate about blending technology and design to
+                        create meaningful experiences.
+                        Whether it’s a small script or a large-scale system, I enjoy transforming concepts into
+                        functional, beautiful, and user-friendly products.
+                    </p>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-8">
+                        My journey in tech started from curiosity — breaking things to understand how they work — and
+                        evolved into a career of building, improving,
+                        and sharing. Each project is a story, a learning experience, and a chance to innovate.
+                    </p>
+                    <a href="#OurProfile" onclick="me.our_profile()"
+                        class="bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-lg font-medium transition">
+                        Explore My Profile
+                    </a>
+                </div>
 
+                <div class="max-w-6xl grid md:grid-cols-3 gap-8 text-center">
+                    <div class="p-8 bg-white rounded-2xl shadow hover:shadow-lg transition">
+                        <h3 class="text-2xl font-semibold text-amber-600 mb-3">Creative Coding</h3>
+                        <p class="text-gray-600 text-base">
+                            I combine artistic thinking with programming logic to design clean, interactive, and
+                            responsive web interfaces.
+                        </p>
+                    </div>
+
+                    <div class="p-8 bg-white rounded-2xl shadow hover:shadow-lg transition">
+                        <h3 class="text-2xl font-semibold text-amber-600 mb-3">Continuous Learning</h3>
+                        <p class="text-gray-600 text-base">
+                            I thrive on curiosity — exploring new frameworks, tools, and architectures to keep evolving
+                            in an ever-changing tech world.
+                        </p>
+                    </div>
+
+                    <div class="p-8 bg-white rounded-2xl shadow hover:shadow-lg transition">
+                        <h3 class="text-2xl font-semibold text-amber-600 mb-3">Human-Centered Design</h3>
+                        <p class="text-gray-600 text-base">
+                            My design philosophy revolves around usability, accessibility, and crafting smooth user
+                            journeys across all devices.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-16 max-w-6xl grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Mission</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            My mission is to create technology that simplifies complexity — building digital solutions
+                            that are elegant, efficient,
+                            and empowering. I aim to contribute to projects that make life better, not just easier.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Vision</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            To blend innovation and empathy in development — producing experiences that connect humans
+                            and technology seamlessly.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
 
         <div id="OurProfile">
-            our profile
+            <section class="min-h-screen flex flex-col justify-center bg-white px-6 py-20">
+                <div class="max-w-5xl mx-auto">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-10 text-center">My Profile</h2>
+
+                    <p class="text-gray-700 mb-10 leading-relaxed text-lg">
+                        With a solid foundation in computer science and real-world problem-solving experience, I bring
+                        together both technical and creative skills.
+                        I’ve worked on projects ranging from small prototypes to large systems, focusing on scalability,
+                        maintainability, and user experience.
+                    </p>
+
+                    <div class="grid md:grid-cols-2 gap-12 mb-10">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-amber-600 mb-4">Technical Skills</h3>
+                            <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
+                                <li>Languages: JavaScript (ES6+), Python, C#, and SQL</li>
+                                <li>Frontend: React, Tailwind CSS, Bulma, Vue.js</li>
+                                <li>Backend: Node.js, FastAPI, Flask, Express</li>
+                                <li>Databases: MySQL, SQLite, MongoDB, PostgreSQL</li>
+                                <li>Version Control: Git, GitHub, GitLab</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-semibold text-amber-600 mb-4">Experience</h3>
+                            <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
+                                <li>Developed responsive web applications for SMEs and startups.</li>
+                                <li>Integrated RESTful APIs and optimized backend performance.</li>
+                                <li>Built internal dashboards for data visualization and reporting.</li>
+                                <li>Collaborated remotely with cross-functional teams worldwide.</li>
+                                <li>Maintained code quality through clean architecture principles.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-2xl shadow p-8 mb-12">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">More About Me</h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            Outside of development, I enjoy learning about UX psychology, typography, and the art of
+                            storytelling in digital design.
+                            My work philosophy is simple: every line of code should serve a purpose, and every design
+                            element should enhance clarity.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            I also enjoy mentoring junior developers, contributing to open-source projects, and
+                            exploring creative tools like Figma and Blender.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
+                            <h4 class="text-lg font-semibold text-amber-600 mb-2">Frontend Expertise</h4>
+                            <p class="text-gray-600 text-sm">
+                                Experienced in building responsive interfaces, component libraries, and SPAs with modern
+                                JS frameworks.
+                            </p>
+                        </div>
+                        <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
+                            <h4 class="text-lg font-semibold text-amber-600 mb-2">Backend Solutions</h4>
+                            <p class="text-gray-600 text-sm">
+                                Comfortable architecting RESTful APIs, database schema design, and secure authentication
+                                systems.
+                            </p>
+                        </div>
+                        <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
+                            <h4 class="text-lg font-semibold text-amber-600 mb-2">Design Thinking</h4>
+                            <p class="text-gray-600 text-sm">
+                                Focused on user-centered design principles and visual consistency across web
+                                experiences.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
 
-
         <div id="Portfolio">
-            portfolio
+            <section class="min-h-screen bg-gray-50 py-20 px-6">
+                <div class="max-w-6xl mx-auto">
+                    <h2 class="text-4xl font-bold text-gray-800 text-center mb-12">My Portfolio</h2>
+
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-16">
+                        <!-- Six projects -->
+                        <!-- Each includes title, description, and tech stack -->
+                        <template id="projects"></template>
+                        <script>
+                            const projects = [
+                                ["TaskFlow", "A team collaboration app for managing tasks and productivity.", "React, Tailwind, Node.js"],
+                                ["DataVision", "Interactive dashboards for real-time analytics.", "Python, FastAPI, Chart.js"],
+                                ["MotionUI", "Micro-interaction library for fluid animations.", "Vanilla JS, CSS"],
+                                ["InsightBoard", "KPI dashboards for business performance.", "Vue.js, Flask"],
+                                ["Artify", "Portfolio sharing platform for digital artists.", "Django, Tailwind"],
+                                ["ChronoTrack", "Time tracking tool with performance insights.", "Svelte, Firebase"]
+                            ];
+                            document.getElementById("projects").insertAdjacentHTML(
+                                "beforebegin",
+                                projects.map(
+                                    ([title, desc, tech], i) => `
+              <div class="bg-white rounded-2xl shadow hover:shadow-xl transition p-6">
+                <img src="https://via.placeholder.com/400x220?text=${encodeURIComponent(title)}" alt="${title}" class="rounded-lg mb-4" />
+                <h3 class="text-lg font-semibold text-amber-600 mb-1">${title}</h3>
+                <p class="text-gray-600 text-sm mb-2">${desc}</p>
+                <span class="text-xs text-gray-500">Tech: ${tech}</span>
+              </div>`
+                                ).join("")
+                            );
+                        </script>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow p-10 text-center">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Want to Collaborate?</h3>
+                        <p class="text-gray-600 mb-6">
+                            I’m always open to discussing new opportunities, collaborations, or interesting projects.
+                            Whether you’re building a product, exploring ideas, or just want to chat tech — let’s
+                            connect!
+                        </p>
+                        <a href="#Home"
+                            class="bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-lg font-medium transition">
+                            Get in Touch
+                        </a>
+                    </div>
+                </div>
+            </section>
         </div>
 
 
         <div id="MessageUs">
-            message us
+            <div id="App"
+                class="min-h-screen flex flex-col justify-center items-center bg-gray-50 p-6 transition-all duration-500">
+                <!-- Grid container -->
+                <div id="contentGrid" class="grid grid-cols-1 gap-8 w-full max-w-5xl transition-all duration-500">
+                    <!-- Left: Form -->
+                    <div id="formBox"
+                        class="bg-white p-6 rounded-xl shadow w-full max-w-md mx-auto transition-all duration-500">
+                        <h2 class="text-2xl font-semibold mb-6 text-gray-800 text-center">
+                            Message Us
+                        </h2>
+
+                        <form id="messageForm" class="space-y-4">
+                            <!-- Nama -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Nama</label>
+                                <input id="name" type="text" placeholder="Nama"
+                                    class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-amber-500" />
+                            </div>
+
+                            <!-- Tanggal Lahir -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Tanggal Lahir</label>
+                                <input id="birthdate" type="date"
+                                    class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-amber-500" />
+                            </div>
+
+                            <!-- Jenis Kelamin -->
+                            <div>
+                                <span class="block text-sm font-medium text-gray-700 mb-1">Jenis Kelamin</span>
+                                <div class="flex items-center gap-4">
+                                    <label class="flex items-center gap-2">
+                                        <input type="radio" name="gender" value="Laki-Laki"
+                                            class="text-amber-500 focus:ring-amber-500" checked />
+                                        <span>Laki-Laki</span>
+                                    </label>
+                                    <label class="flex items-center gap-2">
+                                        <input type="radio" name="gender" value="Perempuan"
+                                            class="text-amber-500 focus:ring-amber-500" />
+                                        <span>Perempuan</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Pesan -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Pesan</label>
+                                <textarea id="message" rows="3" placeholder="Pesan"
+                                    class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+                            </div>
+
+                            <!-- Submit -->
+                            <button type="button" id="submitBtn"
+                                class="w-full bg-amber-500 text-white py-2 rounded-md font-medium hover:bg-amber-600 transition">
+                                Submit
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Right: Output (Initially Hidden) -->
+                    <div id="outputBox"
+                        class="hidden bg-white p-6 rounded-xl shadow border border-gray-200 transition-all duration-500">
+                        <p class="text-sm text-gray-600 mb-4">
+                            <span class="font-semibold">Current time:</span>
+                            <span id="currentTime"></span>
+                        </p>
+
+                        <div id="output" class="text-sm text-gray-700 space-y-1">
+                            <p><span class="font-semibold">Nama:</span> -</p>
+                            <p><span class="font-semibold">Tanggal Lahir:</span> -</p>
+                            <p><span class="font-semibold">Jenis Kelamin:</span> -</p>
+                            <p><span class="font-semibold">Pesan:</span> -</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
 
-    <footer class="bulma-has-background-light bulma-p-0">
-        <div id="Footer" class="bulma-container bulma-has-text-right bulma-is-size-7">
-            Crafted by <span class="bulma-has-text-weight-bold">Mr. E</span> © 2025
+    <footer>
+        <div id="Footer" class="mx-0 px-4 text-right text-[11px] text-gray-700">
+            Crafted by <span class="font-bold">Mr. E</span> © 2025
         </div>
     </footer>
 
