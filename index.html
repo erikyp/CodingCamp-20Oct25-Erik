@@ -14,10 +14,10 @@
     <script src="js/script.js"></script>
 </head>
 
-<body class="font-sans text-gray-800">
+<body class="font-sans text-gray-800 flex flex-col min-h-screen">
 
-    <header class="bulma-has-background-primary bulma-p-0">
-        <div id="NavBar" class="bulma-is-hidden">
+    <header class="bulma-has-background-primary bulma-m-0 bulma-p-0">
+        <div id="NavBar">
             <nav class="bulma-navbar bulma-is-primary" role="navigation" aria-label="main navigation">
                 <div class="bulma-navbar-brand">
                     <a class="bulma-navbar-item" href="#">
@@ -25,7 +25,8 @@
                     </a>
 
                     <!-- 3-strip burger -->
-                    <a role="button" class="bulma-navbar-burger" aria-label="menu" aria-expanded="false" data-target="mainNavbar" title="Click to show Menu">
+                    <a role="button" class="bulma-navbar-burger" aria-label="menu" aria-expanded="false"
+                        data-target="mainNavbar" title="Click to show Menu">
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
@@ -46,35 +47,52 @@
     </header>
 
 
-    <main class="bulma-container bulma-mt-4 bulma-mbulma-0">
-        <div id="AskingName" class="bulma-is-hidden">
-            a
+    <main class="bulma-has-background-primary bulma-m-0 bulma-p-0">
+        <div id="AskingName">
+            <section class="section" style="height: 100vh;">
+                <div class="container has-text-centered"
+                    style="display: flex; align-items: center; justify-content: center; height: 100%;">
+                    <div>
+                        <div class="field">
+                            <div class="control">
+                                <input class="input is-medium" type="text" placeholder="Enter your name">
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="control">
+                                <button class="button is-primary is-medium">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
 
 
-        <div id="Home" class="bulma-is-hidden">
-            b
+        <div id="Home">
+            home
         </div>
 
 
-        <div id="OurProfile" class="bulma-is-hidden">
-            c
+        <div id="OurProfile">
+            our profile
         </div>
 
 
-        <div id="Portfolio" class="bulma-is-hidden">
-            d
+        <div id="Portfolio">
+            portfolio
         </div>
 
 
-        <div id="MessageUs" class="bulma-is-hidden">
-            e
+        <div id="MessageUs">
+            message us
         </div>
     </main>
 
 
     <footer class="bulma-has-background-light bulma-p-0">
-        <div class="bulma-container bulma-has-text-right bulma-is-size-7">
+        <div id="Footer" class="bulma-container bulma-has-text-right bulma-is-size-7">
             Crafted by <span class="bulma-has-text-weight-bold">Mr. E</span> © 2025
         </div>
     </footer>
