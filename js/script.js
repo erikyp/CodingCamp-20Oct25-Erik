@@ -119,19 +119,28 @@ class Me {
     btn.addEventListener("click", () => {
       const name = document.getElementById("name").value.trim();
       const birthdate = document.getElementById("birthdate").value.trim();
+      const email = document.getElementById("email").value.trim();
       const gender = document.querySelector('input[name="gender"]:checked')?.value;
       const message = document.getElementById("message").value.trim();
 
       // 🔸 Validation: Check if all required fields are filled
-      if (!name || !birthdate || !gender || !message) {
+      if (!name || !birthdate || !email || !gender || !message) {
         alert("Please fill out all fields before submitting.");
-        return; // 🚫 Stop execution
+        return;
+      }
+
+      // 🔸 Email format validation
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
       }
 
       // ✅ If valid, show the output
       output.innerHTML = `
     <p><span class="font-semibold">Nama:</span> ${name}</p>
     <p><span class="font-semibold">Tanggal Lahir:</span> ${birthdate}</p>
+    <p><span class="font-semibold">Email:</span> ${email}</p>
     <p><span class="font-semibold">Jenis Kelamin:</span> ${gender}</p>
     <p><span class="font-semibold">Pesan:</span> ${message}</p>
   `;
@@ -153,7 +162,7 @@ class Me {
     if (sender.Name == this.ele_footer.Name) return;
 
 
-    
+
     if (sender.Name == this.ele_asking_name.Name) {
       this.ele_nav_bar.Hide();
       this.ele_footer.Hide();
